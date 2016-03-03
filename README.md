@@ -1,8 +1,8 @@
-# demo-flowrouter
+# MWC Router
 
-mwc demo with flowrouter as the default router
+mwc:router demo.
 
-<a href="http://mwc-flow.meteor.com" target="_blank">DEMO</a>
+<a href="http://mwc-router.meteor.com" target="_blank">DEMO</a>
 
 
 MWC projects
@@ -14,3 +14,4 @@ MWC projects
 [MWC Mixin](https://github.com/meteorwebcomponents/mixin) - Mixin for polymer/webcomponents in meteor.
 
 [mwc flowrouter demo](https://github.com/meteorwebcomponents/demo-flowrouter) - mwc demo with flowrouter as the default router
+
