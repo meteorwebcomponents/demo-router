@@ -2,6 +2,14 @@
 
 mwc:router demo.
 
+Files to check
+
+`[client/router.js](https://github.com/meteorwebcomponents/demo-router/blob/master/client/router.js)`
+
+`[.polymer/demo/demo.html](https://github.com/meteorwebcomponents/demo-router/blob/master/.polymer/demo/demo.html)`
+
+`[.polymer/demo/header.html](https://github.com/meteorwebcomponents/demo-router/blob/master/.polymer/demo/header.html)`
+
 <a href="http://mwc-router.meteor.com" target="_blank">DEMO</a>
 
 
