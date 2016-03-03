@@ -1,0 +1,25 @@
+<dom-module id="demo-header">
+  <template>
+    <paper-tooltip for="header1" position="bottom">Region : Header</paper-tooltip>
+
+    <paper-tabs attr-for-selected="name" selected="{{mwcRoute.params.view}}" >
+      <paper-tab name="home">Home</paper-tab>
+      <paper-tab name="edit">Edit</paper-tab>
+    </paper-tabs>
+
+  </template>
+  <script>
+Polymer({
+  is: "demo-header",
+  behaviors:[mwcRouter],
+  properties:{
+    mwcRoute:{
+      type:Object,
+      route:"landing",
+      params:{"view":"home"}
+    }
+  }
+
+}); 
+  </script>
+</dom-module>

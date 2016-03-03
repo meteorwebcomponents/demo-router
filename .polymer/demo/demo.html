@@ -1,0 +1,60 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="name-tag.html">
+<dom-module id="demo-route">
+  <template>
+    <style>
+.main{
+  @apply(--layout-horizontal);
+  @apply(--layout-center-center);
+}
+    </style>
+    <paper-tooltip for="region1" position="top">Region : main</paper-tooltip>
+    <iron-pages class="flex main" id="mainView" selected="{{mwcRoute.params.view}}" attr-for-selected="name">
+      <paper-card heading="MWC:ROUTER DEMO ROUTE:1" id="region1" name="home">
+        <div class="card-content">
+          <div> You are in Home page </div>
+          <div>MWC - meteor web components.</div>
+        </div>
+        <div class="card-actions">
+          <paper-button on-click="edit">Edit</paper-button>
+        </div>
+      </paper-card>
+      <paper-card heading="MWC:ROUTER DEMO ROUTE:2" name="edit" id="region2">
+        <div class="card-content">
+          <div class="">
+            You are now in edit Page
+          </div>
+          <name-tag></name-tag>
+          <div>MWC - meteor web components.</div>
+        </div>
+        <div class="card-actions">
+          <paper-button on-click="home">
+            Go to Home
+          </paper-button>
+        </div>
+      </paper-card>
+    </iron-pages>
+  </template>
+  <script>
+Polymer({
+  is: "demo-route",
+  behaviors:[mwcRouter],
+  properties:{
+    mwcRoute:{
+      type:Object,
+      route:"landing",
+
+      params:{"view":"home"}
+    }
+  },
+  edit:function(){
+    this.set("mwcRoute.params.view", "edit"); 
+  },
+  home:function(){
+
+    this.set("mwcRoute.params.view", "home"); 
+  }
+});
+  </script>
+</dom-module>
+
