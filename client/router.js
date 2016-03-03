@@ -4,12 +4,14 @@ document.addEventListener("WebComponentsReady", function() {
   FlowRouter.initialize({
   });
 });
+
+FlowRouter.route("/", {
+triggersEnter:[function(c,r){
+r('/home');
+}]
+});
 FlowRouter.route("/:view", {
   name:'landing',
-  triggersEnter:[function(r,c){
-    if(!r.params.view)
-      redirect("/home");
-  }],
   action:function(params,queryParams){
     mwcLayout.render("demo-landing",{"main":"demo-route","header":"demo-header"});
   }
