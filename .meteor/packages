@@ -24,3 +24,7 @@ momentjs:moment
 reactive-var
 mwc:router
 mwc:compiler
+
+
+mwc-compiler
+mwc:ecmascript
