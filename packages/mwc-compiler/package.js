@@ -6,7 +6,7 @@ Package.describe({
   git: "https://github.com/meteorwebcomponents/compiler.git",
   name: "mwc-compiler",
   summary: "Use polymer as the default templating engine instead of blaze.",
-  version: "1.0.1"
+  version: "1.0.5"
 });
 
 function deps(api) {
@@ -14,12 +14,19 @@ function deps(api) {
 
   var d = ["underscore", "mwc:compiler", "mwc:extensions"];
   var mwcFilePath = path.resolve('client/compiler.mwc.json');
-  if (mwcFilePath) {
-    var mwcFile = JSON.parse(fs.readFileSync(mwcFilePath, 'utf8'));
-    var extensions = _.keys(_.omit(mwcFile.extensions, ['log', "logFile"]));
-    extensions.forEach(function(ext) {
-      d.push(ext)
-    });
+  if (fs.existsSync(mwcFilePath)) {
+    try {
+      var mwcFile = JSON.parse(fs.readFileSync(mwcFilePath, 'utf8'));
+    } catch (err) {
+      return d;
+    }
+    if (mwcFile.hasOwnProperty("extensions")) {
+      var extensions = _.keys(_.omit(mwcFile.extensions, ["log", "logFile"]));
+      extensions.forEach(function(ext) {
+        d.push(ext);
+      });
+
+    }
   }
   return d;
 }

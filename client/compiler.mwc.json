@@ -14,7 +14,7 @@
     ],
     "root": ".polymer",
     "extensions": {
-        "mwc:ecmascript@1.0.10": {
+        "mwc:ecmascript@1.0.13": {
             "compileFunction": "MWCEcmascript"
         }
     }
